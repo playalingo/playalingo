@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,8 +7,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="icon" href="/img/favicon.ico" type="image/x-icon">
 
-  <!-- ✅ Reliable Font Awesome CDN for icons -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-wQ3R3ZoQ6fp3Y+5o3rXQwM8+LkxlqkBq0xdkAxROsmw5GM8QyBzbo6AlTjK+Zbs+fYkG63Lq6PTUQuv+LCaWxQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <!-- ✅ Reliable Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-MFSgkQld7oGscFUyRCbV9zVm2uEtULqjtn9J10wFGtAiUdS3MeUjcKLHvlqRVu3XzKo+3VuD94VmKGoQ5f+NAw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
   <style>
     body {
@@ -90,7 +91,7 @@
       color: #ff00ff;
     }
 
-    /* === Starry Particles === */
+    /* === Starry Background === */
     .particles {
       position: absolute;
       top: 0;
@@ -105,11 +106,10 @@
     .particles span {
       position: absolute;
       display: block;
-      width: 6px;
-      height: 6px;
-      background: rgba(255, 255, 255, 0.4);
-      animation: float 15s linear infinite;
-      /* Sharper particles (stars) */
+      width: 4px;
+      height: 4px;
+      background: rgba(255, 255, 255, 0.5);
+      animation: float 25s linear infinite, twinkle 3s ease-in-out infinite;
       border-radius: 1px;
       box-shadow: 0 0 6px rgba(255, 255, 255, 0.6);
     }
@@ -128,21 +128,37 @@
       }
     }
 
-    .particles span:nth-child(1) { left: 10%; animation-delay: 0s; }
-    .particles span:nth-child(2) { left: 25%; animation-delay: 2s; }
-    .particles span:nth-child(3) { left: 40%; animation-delay: 4s; }
-    .particles span:nth-child(4) { left: 55%; animation-delay: 1s; }
-    .particles span:nth-child(5) { left: 70%; animation-delay: 3s; }
-    .particles span:nth-child(6) { left: 85%; animation-delay: 5s; }
-    .particles span:nth-child(7) { left: 95%; animation-delay: 2.5s; }
-    .particles span:nth-child(8) { left: 60%; animation-delay: 1.8s; }
+    @keyframes twinkle {
+      0%, 100% { opacity: 0.3; }
+      50% { opacity: 1; box-shadow: 0 0 8px rgba(255, 255, 255, 0.9); }
+    }
   </style>
 </head>
 <body>
-  <!-- ✨ Starry background -->
+
+  <!-- ✨ Animated Star Particles -->
   <div class="particles">
-    <span></span><span></span><span></span><span></span>
-    <span></span><span></span><span></span><span></span>
+    <!-- Generate 20 stars -->
+    <span style="left: 5%; animation-delay: 0s;"></span>
+    <span style="left: 12%; animation-delay: 2s;"></span>
+    <span style="left: 18%; animation-delay: 4s;"></span>
+    <span style="left: 25%; animation-delay: 6s;"></span>
+    <span style="left: 32%; animation-delay: 3s;"></span>
+    <span style="left: 38%; animation-delay: 1s;"></span>
+    <span style="left: 45%; animation-delay: 5s;"></span>
+    <span style="left: 52%; animation-delay: 2.5s;"></span>
+    <span style="left: 58%; animation-delay: 3.2s;"></span>
+    <span style="left: 65%; animation-delay: 4.1s;"></span>
+    <span style="left: 70%; animation-delay: 1.7s;"></span>
+    <span style="left: 75%; animation-delay: 3.7s;"></span>
+    <span style="left: 80%; animation-delay: 0.8s;"></span>
+    <span style="left: 85%; animation-delay: 2.8s;"></span>
+    <span style="left: 90%; animation-delay: 1.2s;"></span>
+    <span style="left: 95%; animation-delay: 3.3s;"></span>
+    <span style="left: 30%; animation-delay: 0.5s;"></span>
+    <span style="left: 60%; animation-delay: 2.9s;"></span>
+    <span style="left: 15%; animation-delay: 1.9s;"></span>
+    <span style="left: 50%; animation-delay: 0.2s;"></span>
   </div>
 
   <div class="card">
@@ -152,7 +168,6 @@
     <p>Join our WhatsApp group to beta test and co-create the Playa Lingo GPT and get early access.</p>
     <a href="https://chat.whatsapp.com/YOUR-GROUP-CODE" class="button">JOIN US</a>
 
-    <!-- ✅ Social Icons -->
     <div class="social-icons">
       <a href="https://linkedin.com" target="_blank"><i class="fab fa-linkedin-in"></i></a>
       <a href="https://github.com" target="_blank"><i class="fab fa-github"></i></a>
