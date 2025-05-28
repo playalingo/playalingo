@@ -19,14 +19,16 @@
       background: rgba(255, 255, 255, 0.08);
       backdrop-filter: blur(12px);
       border-radius: 20px;
-      padding: 40px 30px;
+      padding: 40px 30px 30px 30px;
       max-width: 700px;
       text-align: center;
       margin: 10px auto 0 auto;
       box-shadow: 0 8px 32px rgba(255, 0, 255, 0.2);
       border: 1px solid rgba(255, 255, 255, 0.2);
       position: relative;
-      z-index: 2;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
     }
 
     img.logo {
@@ -52,7 +54,7 @@
 
     a.button {
       display: inline-block;
-      margin-top: 20px;
+      margin: 30px auto 50px auto;
       background: linear-gradient(90deg, #00ffff, #ff00ff);
       color: black;
       padding: 12px 24px;
@@ -69,24 +71,27 @@
 
     /* === Social Icons === */
     .social-icons {
-      margin-top: 30px;
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      padding-top: 20px;
     }
 
     .social-icons a {
       display: inline-block;
-      margin: 0 10px;
+      transition: transform 0.3s ease, filter 0.3s ease;
     }
 
     .social-icons img {
       width: 32px;
       height: 32px;
-      filter: invert(1) brightness(2) hue-rotate(180deg); /* cyan tint */
-      transition: transform 0.3s ease, filter 0.3s ease;
+      filter: grayscale(100%) brightness(0.8) opacity(0.8);
+      transition: filter 0.3s ease, transform 0.3s ease;
     }
 
-    .social-icons img:hover {
+    .social-icons a:hover img {
+      filter: drop-shadow(0 0 4px #00ffff) brightness(1.2);
       transform: scale(1.2);
-      filter: invert(1) brightness(2) hue-rotate(300deg); /* pink on hover */
     }
   </style>
 </head>
@@ -97,9 +102,10 @@
     <h1>PLAYA LINGO</h1>
     <p>The only language you need to learn is AI—because it teaches you everything else.</p>
     <p>Join our WhatsApp group to beta test and co-create the Playa Lingo GPT and get early access.</p>
+
     <a href="https://chat.whatsapp.com/YOUR-GROUP-CODE" class="button">JOIN US</a>
 
-    <!-- ✅ Social Icons (now 6) -->
+    <!-- ✅ Gray by default, glowing on hover -->
     <div class="social-icons">
       <a href="https://github.com" target="_blank"><img src="/img/github.png" alt="GitHub"></a>
       <a href="https://wa.me" target="_blank"><img src="/img/whatsapp.png" alt="WhatsApp"></a>
