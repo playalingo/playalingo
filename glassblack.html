@@ -80,12 +80,13 @@
     .social-icons img {
       width: 32px;
       height: 32px;
-      filter: brightness(1.1) drop-shadow(0 0 3px rgba(255, 0, 255, 0.4));
-      transition: transform 0.3s ease;
+      filter: invert(1) brightness(2) hue-rotate(180deg); /* cyan tint */
+      transition: transform 0.3s ease, filter 0.3s ease;
     }
 
     .social-icons img:hover {
       transform: scale(1.2);
+      filter: invert(1) brightness(2) hue-rotate(300deg); /* pink on hover */
     }
   </style>
 </head>
@@ -98,13 +99,14 @@
     <p>Join our WhatsApp group to beta test and co-create the Playa Lingo GPT and get early access.</p>
     <a href="https://chat.whatsapp.com/YOUR-GROUP-CODE" class="button">JOIN US</a>
 
-    <!-- ✅ Custom Social Icon Images -->
+    <!-- ✅ Social Icons (now 6) -->
     <div class="social-icons">
       <a href="https://github.com" target="_blank"><img src="/img/github.png" alt="GitHub"></a>
       <a href="https://wa.me" target="_blank"><img src="/img/whatsapp.png" alt="WhatsApp"></a>
       <a href="https://linkedin.com" target="_blank"><img src="/img/linkedin.png" alt="LinkedIn"></a>
       <a href="https://x.com" target="_blank"><img src="/img/x.png" alt="X / Twitter"></a>
       <a href="https://youtube.com" target="_blank"><img src="/img/youtube.png" alt="YouTube"></a>
+      <a href="https://instagram.com" target="_blank"><img src="/img/instagram.png" alt="Instagram"></a>
     </div>
   </div>
 </body>
