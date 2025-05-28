@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="icon" href="/img/favicon.ico" type="image/x-icon">
 
-  <!-- ✅ Font Awesome via CSS CDN -->
+  <!-- ✅ Confirmed working CDN -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-MFSgkQld7oGscFUyRCbV9zVm2uEtULqjtn9J10wFGtAiUdS3MeUjcKLHvlqRVu3XzKo+3VuD94VmKGoQ5f+NAw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
   <style>
@@ -77,14 +77,19 @@
     }
 
     .social-icons a {
-      margin: 0 12px;
+      display: inline-block;
+      margin: 0 10px;
       color: #eaeaea;
-      font-size: 1.8rem;
-      transition: color 0.3s ease;
+      font-size: 2rem;
+      padding: 10px;
+      background: rgba(255,255,255,0.05);
+      border-radius: 50%;
+      transition: 0.3s ease;
     }
 
     .social-icons a:hover {
       color: #ff00ff;
+      background: rgba(255,255,255,0.15);
     }
 
     /* === Smoke Animation === */
@@ -101,13 +106,13 @@
 
     .smoke span {
       position: absolute;
-      bottom: -100px;
-      width: 60px;
-      height: 60px;
-      background: radial-gradient(circle, rgba(255,255,255,0.08), transparent);
+      bottom: -150px;
+      width: 120px;
+      height: 120px;
+      background: radial-gradient(circle, rgba(255,255,255,0.04), transparent);
       border-radius: 50%;
-      animation: rise 20s ease-in-out infinite;
-      filter: blur(20px);
+      animation: rise 40s ease-in-out infinite;
+      filter: blur(60px);
     }
 
     @keyframes rise {
@@ -116,30 +121,43 @@
         opacity: 0;
       }
       25% {
-        opacity: 0.3;
-      }
-      50% {
-        transform: translateY(-200px) scale(1.2);
         opacity: 0.15;
       }
+      50% {
+        transform: translateY(-300px) scale(1.5);
+        opacity: 0.1;
+      }
       100% {
-        transform: translateY(-400px) scale(1.5);
+        transform: translateY(-600px) scale(2);
         opacity: 0;
       }
     }
-
-    .smoke span:nth-child(1) { left: 10%; animation-delay: 0s; }
-    .smoke span:nth-child(2) { left: 30%; animation-delay: 5s; }
-    .smoke span:nth-child(3) { left: 50%; animation-delay: 2s; }
-    .smoke span:nth-child(4) { left: 70%; animation-delay: 4s; }
-    .smoke span:nth-child(5) { left: 85%; animation-delay: 1s; }
   </style>
 </head>
 <body>
 
-  <!-- 🌀 Smoky Background -->
+  <!-- ☁️ Heavy Smoke Background -->
   <div class="smoke">
-    <span></span><span></span><span></span><span></span><span></span>
+    <!-- 25 random cloud puffs -->
+    <span style="left: 5%; animation-delay: 0s;"></span>
+    <span style="left: 10%; animation-delay: 5s;"></span>
+    <span style="left: 15%; animation-delay: 10s;"></span>
+    <span style="left: 20%; animation-delay: 15s;"></span>
+    <span style="left: 25%; animation-delay: 20s;"></span>
+    <span style="left: 30%; animation-delay: 3s;"></span>
+    <span style="left: 35%; animation-delay: 8s;"></span>
+    <span style="left: 40%; animation-delay: 13s;"></span>
+    <span style="left: 45%; animation-delay: 18s;"></span>
+    <span style="left: 50%; animation-delay: 1s;"></span>
+    <span style="left: 55%; animation-delay: 6s;"></span>
+    <span style="left: 60%; animation-delay: 11s;"></span>
+    <span style="left: 65%; animation-delay: 16s;"></span>
+    <span style="left: 70%; animation-delay: 21s;"></span>
+    <span style="left: 75%; animation-delay: 4s;"></span>
+    <span style="left: 80%; animation-delay: 9s;"></span>
+    <span style="left: 85%; animation-delay: 14s;"></span>
+    <span style="left: 90%; animation-delay: 19s;"></span>
+    <span style="left: 95%; animation-delay: 2s;"></span>
   </div>
 
   <div class="card">
@@ -149,11 +167,12 @@
     <p>Join our WhatsApp group to beta test and co-create the Playa Lingo GPT and get early access.</p>
     <a href="https://chat.whatsapp.com/YOUR-GROUP-CODE" class="button">JOIN US</a>
 
+    <!-- ✅ Social Icons with fallback -->
     <div class="social-icons">
-      <a href="https://linkedin.com" target="_blank"><i class="fab fa-linkedin-in"></i> LinkedIn</a>
-      <a href="https://github.com" target="_blank"><i class="fab fa-github"></i> GitHub</a>
-      <a href="https://youtube.com" target="_blank"><i class="fab fa-youtube"></i> YouTube</a>
-      <a href="https://wa.me" target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+      <a href="https://linkedin.com" target="_blank" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+      <a href="https://github.com" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
+      <a href="https://youtube.com" target="_blank" title="YouTube"><i class="fab fa-youtube"></i></a>
+      <a href="https://wa.me" target="_blank" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
     </div>
   </div>
 </body>
