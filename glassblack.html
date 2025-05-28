@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="icon" href="/img/favicon.ico" type="image/x-icon">
 
-  <!-- ✅ Reliable Font Awesome -->
+  <!-- ✅ Font Awesome via CSS CDN -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-MFSgkQld7oGscFUyRCbV9zVm2uEtULqjtn9J10wFGtAiUdS3MeUjcKLHvlqRVu3XzKo+3VuD94VmKGoQ5f+NAw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
   <style>
@@ -24,7 +23,6 @@
     .card {
       background: rgba(255, 255, 255, 0.08);
       backdrop-filter: blur(12px);
-      -webkit-backdrop-filter: blur(12px);
       border-radius: 20px;
       padding: 40px 30px;
       max-width: 700px;
@@ -38,7 +36,6 @@
 
     img.logo {
       width: 200px;
-      height: auto;
       margin-bottom: 20px;
       border-radius: 50%;
       box-shadow: 0 0 20px rgba(255, 0, 255, 0.3);
@@ -75,7 +72,6 @@
       transform: scale(1.05);
     }
 
-    /* === Social Icons === */
     .social-icons {
       margin-top: 30px;
     }
@@ -91,74 +87,59 @@
       color: #ff00ff;
     }
 
-    /* === Starry Background === */
-    .particles {
+    /* === Smoke Animation === */
+    .smoke {
       position: absolute;
       top: 0;
       left: 0;
-      height: 100%;
       width: 100%;
+      height: 100%;
+      pointer-events: none;
       overflow: hidden;
       z-index: 0;
-      pointer-events: none;
     }
 
-    .particles span {
+    .smoke span {
       position: absolute;
-      display: block;
-      width: 4px;
-      height: 4px;
-      background: rgba(255, 255, 255, 0.5);
-      animation: float 25s linear infinite, twinkle 3s ease-in-out infinite;
-      border-radius: 1px;
-      box-shadow: 0 0 6px rgba(255, 255, 255, 0.6);
+      bottom: -100px;
+      width: 60px;
+      height: 60px;
+      background: radial-gradient(circle, rgba(255,255,255,0.08), transparent);
+      border-radius: 50%;
+      animation: rise 20s ease-in-out infinite;
+      filter: blur(20px);
     }
 
-    @keyframes float {
+    @keyframes rise {
       0% {
-        transform: translateY(100vh) scale(0.8);
+        transform: translateY(0) scale(1);
         opacity: 0;
+      }
+      25% {
+        opacity: 0.3;
       }
       50% {
-        opacity: 1;
+        transform: translateY(-200px) scale(1.2);
+        opacity: 0.15;
       }
       100% {
-        transform: translateY(-10vh) scale(1.2);
+        transform: translateY(-400px) scale(1.5);
         opacity: 0;
       }
     }
 
-    @keyframes twinkle {
-      0%, 100% { opacity: 0.3; }
-      50% { opacity: 1; box-shadow: 0 0 8px rgba(255, 255, 255, 0.9); }
-    }
+    .smoke span:nth-child(1) { left: 10%; animation-delay: 0s; }
+    .smoke span:nth-child(2) { left: 30%; animation-delay: 5s; }
+    .smoke span:nth-child(3) { left: 50%; animation-delay: 2s; }
+    .smoke span:nth-child(4) { left: 70%; animation-delay: 4s; }
+    .smoke span:nth-child(5) { left: 85%; animation-delay: 1s; }
   </style>
 </head>
 <body>
 
-  <!-- ✨ Animated Star Particles -->
-  <div class="particles">
-    <!-- Generate 20 stars -->
-    <span style="left: 5%; animation-delay: 0s;"></span>
-    <span style="left: 12%; animation-delay: 2s;"></span>
-    <span style="left: 18%; animation-delay: 4s;"></span>
-    <span style="left: 25%; animation-delay: 6s;"></span>
-    <span style="left: 32%; animation-delay: 3s;"></span>
-    <span style="left: 38%; animation-delay: 1s;"></span>
-    <span style="left: 45%; animation-delay: 5s;"></span>
-    <span style="left: 52%; animation-delay: 2.5s;"></span>
-    <span style="left: 58%; animation-delay: 3.2s;"></span>
-    <span style="left: 65%; animation-delay: 4.1s;"></span>
-    <span style="left: 70%; animation-delay: 1.7s;"></span>
-    <span style="left: 75%; animation-delay: 3.7s;"></span>
-    <span style="left: 80%; animation-delay: 0.8s;"></span>
-    <span style="left: 85%; animation-delay: 2.8s;"></span>
-    <span style="left: 90%; animation-delay: 1.2s;"></span>
-    <span style="left: 95%; animation-delay: 3.3s;"></span>
-    <span style="left: 30%; animation-delay: 0.5s;"></span>
-    <span style="left: 60%; animation-delay: 2.9s;"></span>
-    <span style="left: 15%; animation-delay: 1.9s;"></span>
-    <span style="left: 50%; animation-delay: 0.2s;"></span>
+  <!-- 🌀 Smoky Background -->
+  <div class="smoke">
+    <span></span><span></span><span></span><span></span><span></span>
   </div>
 
   <div class="card">
@@ -169,10 +150,10 @@
     <a href="https://chat.whatsapp.com/YOUR-GROUP-CODE" class="button">JOIN US</a>
 
     <div class="social-icons">
-      <a href="https://linkedin.com" target="_blank"><i class="fab fa-linkedin-in"></i></a>
-      <a href="https://github.com" target="_blank"><i class="fab fa-github"></i></a>
-      <a href="https://youtube.com" target="_blank"><i class="fab fa-youtube"></i></a>
-      <a href="https://wa.me" target="_blank"><i class="fab fa-whatsapp"></i></a>
+      <a href="https://linkedin.com" target="_blank"><i class="fab fa-linkedin-in"></i> LinkedIn</a>
+      <a href="https://github.com" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+      <a href="https://youtube.com" target="_blank"><i class="fab fa-youtube"></i> YouTube</a>
+      <a href="https://wa.me" target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp</a>
     </div>
   </div>
 </body>
