@@ -5,8 +5,10 @@
   <title>Playa Lingo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="icon" href="/img/favicon.ico" type="image/x-icon">
-  <!-- ✅ Load Font Awesome -->
-  <script src="https://kit.fontawesome.com/4f3b65107d.js" crossorigin="anonymous"></script>
+
+  <!-- ✅ Reliable Font Awesome CDN for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-wQ3R3ZoQ6fp3Y+5o3rXQwM8+LkxlqkBq0xdkAxROsmw5GM8QyBzbo6AlTjK+Zbs+fYkG63Lq6PTUQuv+LCaWxQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
   <style>
     body {
       margin: 0;
@@ -72,7 +74,7 @@
       transform: scale(1.05);
     }
 
-    /* Social Icons */
+    /* === Social Icons === */
     .social-icons {
       margin-top: 30px;
     }
@@ -88,7 +90,7 @@
       color: #ff00ff;
     }
 
-    /* Particle Background */
+    /* === Starry Particles === */
     .particles {
       position: absolute;
       top: 0;
@@ -103,11 +105,13 @@
     .particles span {
       position: absolute;
       display: block;
-      width: 8px;
-      height: 8px;
-      background: rgba(255, 255, 255, 0.15);
-      animation: float 12s linear infinite;
-      border-radius: 50%;
+      width: 6px;
+      height: 6px;
+      background: rgba(255, 255, 255, 0.4);
+      animation: float 15s linear infinite;
+      /* Sharper particles (stars) */
+      border-radius: 1px;
+      box-shadow: 0 0 6px rgba(255, 255, 255, 0.6);
     }
 
     @keyframes float {
@@ -124,7 +128,6 @@
       }
     }
 
-    /* Random Positions */
     .particles span:nth-child(1) { left: 10%; animation-delay: 0s; }
     .particles span:nth-child(2) { left: 25%; animation-delay: 2s; }
     .particles span:nth-child(3) { left: 40%; animation-delay: 4s; }
@@ -136,7 +139,7 @@
   </style>
 </head>
 <body>
-  <!-- Particle Animation -->
+  <!-- ✨ Starry background -->
   <div class="particles">
     <span></span><span></span><span></span><span></span>
     <span></span><span></span><span></span><span></span>
@@ -149,8 +152,9 @@
     <p>Join our WhatsApp group to beta test and co-create the Playa Lingo GPT and get early access.</p>
     <a href="https://chat.whatsapp.com/YOUR-GROUP-CODE" class="button">JOIN US</a>
 
+    <!-- ✅ Social Icons -->
     <div class="social-icons">
-      <a href="https://linkedin.com" target="_blank"><i class="fab fa-linkedin"></i></a>
+      <a href="https://linkedin.com" target="_blank"><i class="fab fa-linkedin-in"></i></a>
       <a href="https://github.com" target="_blank"><i class="fab fa-github"></i></a>
       <a href="https://youtube.com" target="_blank"><i class="fab fa-youtube"></i></a>
       <a href="https://wa.me" target="_blank"><i class="fab fa-whatsapp"></i></a>
