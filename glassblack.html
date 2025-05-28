@@ -5,13 +5,17 @@
   <title>Playa Lingo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="icon" href="/img/favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-D5lUuv/2jTJ4kTyMi2MfMZtKSK4ObTQ+rD6r+B+BlS+VZFt2co3CjAN8AFpUdFMmJ6PvO8c4O9RnV5cDJbBqzA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   <style>
+    /* === Base Styling === */
     body {
       margin: 0;
       padding: 10px 20px;
       background: linear-gradient(180deg, #1a0033, #000000);
       font-family: 'Segoe UI', sans-serif;
       min-height: 100vh;
+      overflow: hidden;
+      position: relative;
     }
 
     .card {
@@ -25,6 +29,8 @@
       margin: 10px auto 0 auto;
       box-shadow: 0 8px 32px rgba(255, 0, 255, 0.2);
       border: 1px solid rgba(255, 255, 255, 0.2);
+      position: relative;
+      z-index: 2;
     }
 
     img.logo {
@@ -65,15 +71,91 @@
       filter: brightness(1.15);
       transform: scale(1.05);
     }
+
+    /* === Social Icons === */
+    .social-icons {
+      margin-top: 30px;
+    }
+
+    .social-icons a {
+      margin: 0 10px;
+      color: #eaeaea;
+      font-size: 1.5rem;
+      transition: color 0.3s ease;
+    }
+
+    .social-icons a:hover {
+      color: #ff00ff;
+    }
+
+    /* === Background Animation === */
+    .particles {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      overflow: hidden;
+      z-index: 0;
+      pointer-events: none;
+    }
+
+    .particles span {
+      position: absolute;
+      display: block;
+      width: 4px;
+      height: 4px;
+      background: rgba(255, 255, 255, 0.1);
+      animation: float 10s linear infinite;
+      border-radius: 50%;
+    }
+
+    @keyframes float {
+      0% {
+        transform: translateY(100vh) scale(0.8);
+        opacity: 0;
+      }
+      50% {
+        opacity: 1;
+      }
+      100% {
+        transform: translateY(-10vh) scale(1.2);
+        opacity: 0;
+      }
+    }
+
+    /* Randomly position particles */
+    .particles span:nth-child(1) { left: 10%; animation-delay: 0s; }
+    .particles span:nth-child(2) { left: 25%; animation-delay: 2s; }
+    .particles span:nth-child(3) { left: 40%; animation-delay: 4s; }
+    .particles span:nth-child(4) { left: 55%; animation-delay: 1s; }
+    .particles span:nth-child(5) { left: 70%; animation-delay: 3s; }
+    .particles span:nth-child(6) { left: 85%; animation-delay: 5s; }
+    .particles span:nth-child(7) { left: 95%; animation-delay: 2.5s; }
+    .particles span:nth-child(8) { left: 60%; animation-delay: 1.8s; }
   </style>
 </head>
 <body>
+  <!-- Subtle particle background -->
+  <div class="particles">
+    <span></span><span></span><span></span><span></span>
+    <span></span><span></span><span></span><span></span>
+  </div>
+
   <div class="card">
     <img src="/img/logo.png.png" alt="Playa Lingo Logo" class="logo" />
     <h1>PLAYA LINGO</h1>
     <p>The only language you need to learn is AI—because it teaches you everything else.</p>
     <p>Join our WhatsApp group to beta test and co-create the Playa Lingo GPT and get early access.</p>
     <a href="https://chat.whatsapp.com/YOUR-GROUP-CODE" class="button">JOIN US</a>
+
+    <!-- Social Icons -->
+    <div class="social-icons">
+      <a href="https://linkedin.com" target="_blank"><i class="fab fa-linkedin"></i></a>
+      <a href="https://github.com" target="_blank"><i class="fab fa-github"></i></a>
+      <a href="https://youtube.com" target="_blank"><i class="fab fa-youtube"></i></a>
+      <a href="https://wa.me" target="_blank"><i class="fab fa-whatsapp"></i></a>
+    </div>
   </div>
 </body>
 </html>
