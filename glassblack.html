@@ -12,19 +12,25 @@
       background: linear-gradient(180deg, #1a0033, #000000);
       font-family: 'Segoe UI', sans-serif;
       min-height: 100vh;
-      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
 
     .card {
       background: rgba(255, 255, 255, 0.08);
       backdrop-filter: blur(12px);
       border-radius: 20px;
-      padding: 40px 30px;
+      padding: 40px 30px 50px 30px; /* added bottom padding */
       max-width: 700px;
+      width: 100%;
       text-align: center;
-      margin: 10px auto 0 auto;
       box-shadow: 0 8px 32px rgba(255, 0, 255, 0.2);
       border: 1px solid rgba(255, 255, 255, 0.2);
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
     }
 
     img.logo {
@@ -50,7 +56,7 @@
 
     a.button {
       display: inline-block;
-      margin-top: 30px;
+      margin: 30px auto 60px auto; /* increased bottom margin for spacing */
       background: linear-gradient(90deg, #00ffff, #ff00ff);
       color: black;
       padding: 12px 24px;
@@ -64,26 +70,19 @@
       filter: brightness(1.15);
     }
 
-    /* === Social Icons === */
     .social-icons {
-      margin-top: 40px;
+      margin-top: auto;
     }
 
     .social-icons a {
       display: inline-block;
-      margin: 0 10px;
+      margin: 0 12px;
     }
 
     .social-icons img {
       width: 32px;
       height: 32px;
-      filter: brightness(0.9) grayscale(0.2) opacity(0.9);
-      transition: filter 0.3s ease, box-shadow 0.3s ease;
-    }
-
-    .social-icons a:hover img {
-      filter: brightness(1.2);
-      box-shadow: 0 0 10px #ff00ff;
+      filter: brightness(0.95) grayscale(100%) opacity(0.9);
     }
   </style>
 </head>
@@ -97,7 +96,7 @@
 
     <a href="https://chat.whatsapp.com/YOUR-GROUP-CODE" class="button">JOIN US</a>
 
-    <!-- ✅ Soft grey icons with magenta glow on hover -->
+    <!-- ✅ Clean, static, light-grey icons -->
     <div class="social-icons">
       <a href="https://github.com" target="_blank"><img src="/img/github.png" alt="GitHub"></a>
       <a href="https://wa.me" target="_blank"><img src="/img/whatsapp.png" alt="WhatsApp"></a>
@@ -107,5 +106,6 @@
       <a href="https://instagram.com" target="_blank"><img src="/img/instagram.png" alt="Instagram"></a>
     </div>
   </div>
+
 </body>
 </html>
